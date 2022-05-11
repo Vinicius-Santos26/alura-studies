@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 
 import style from "./Button.module.scss";
 
-type ButtonProps = {
+interface ButtonProps {
     children: ReactNode;
     type?: "button" | "submit" | "reset" | undefined;
 };

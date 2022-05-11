@@ -4,7 +4,7 @@ import { ITask } from "../../types/task";
 import { v4 as uuidv4 } from "uuid";
 import style from "./Form.module.scss";
 
-type FormProps = {
+interface FormProps {
     setTasks: React.Dispatch<React.SetStateAction<ITask[]>>;
 };
 

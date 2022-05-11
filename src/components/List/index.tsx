@@ -3,17 +3,18 @@ import ListItem from "./Item";
 import { ITask } from "../../types/task";
 import style from "./List.module.scss";
 
-type ListProps = {
+interface ListProps {
     tasks: Array<ITask>;
+    selectTask: (selectedTask: ITask) => void
 };
 
-function List({ tasks }: ListProps) {
+function List({ tasks, selectTask }: ListProps) {
     return (
         <aside className={style.listaTarefas}>
             <h2>Estudos do dia</h2>
             <ul>
-                {tasks.map((task, index) => (
-                    <ListItem key={index} {...task} />
+                {tasks.map((task) => (
+                    <ListItem key={task.id} {...task} selectTask={selectTask} />
                 ))}
             </ul>
         </aside>
