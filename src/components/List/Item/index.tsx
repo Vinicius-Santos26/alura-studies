@@ -1,11 +1,8 @@
-import style from './ListItem.module.scss';
+import { ITask } from "../../../types/task";
+import style from "./ListItem.module.scss";
 
-type ListItemProps = {
-    task: string, 
-    time: string
-}
-
-export default function ListItem({task, time} : ListItemProps) {
+export default function ListItem({ task, time, selected, completed, id }: ITask) {
+    console.log("itematual:", { task, time, selected, completed, id });
     return (
         <li className={style.item}>
             <h3>{task}</h3>
